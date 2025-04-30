@@ -4,7 +4,7 @@ A robust Customer Relationship Management (CRM) system built with Spring Boot by
 
 ---
 
-## 📷 Screenshots
+## 📷 User Interface
 
 ### Dashboard
 
@@ -154,5 +154,23 @@ GRANT ALL PRIVILEGES ON DATABASE crm TO crm_user;
 # 6. Allow the user to access the public schema (if needed)
 \c crm
 GRANT ALL ON SCHEMA public TO crm_user;
+```
+
+```
+# 1. Clone the repository
+git clone https://github.com/your-username/your-repo.git
+cd your-repo
+
+# 2. Make sure Java 17 is installed
+java -version
+# If not, install Java 17 and configure JAVA_HOME
+
+# 3. Import the project into your favorite IDE (IntelliJ, VSCode, Eclipse)
+
+# Set up installation
+mvn clean install
+
+# 5. Run the application
+mvn spring-boot:run
 ```
 
