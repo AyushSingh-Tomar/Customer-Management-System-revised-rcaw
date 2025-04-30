@@ -1,6 +1,7 @@
 # CRM Spring Boot Application
 
 A robust Customer Relationship Management (CRM) system built with Spring Boot by **Ayush Singh Tomar**.
+[Download the Project Overview PDF](./0103CS221112-CRM-Project.pdf)
 
 ---
 
