@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{layout/base :: html}">
+<head>
+    <title>Add/Edit Customer</title>
+</head>
+<body>
+    <!-- Page title -->
+    <h1 id="pageTitle" th:text="${customer?.id} ? 'Edit Customer' : 'New Customer'">Add/Edit Customer</h1>
+
+    <!-- Page header -->
+    <h1 id="pageHeader" th:text="${customer?.id} ? 'Edit Customer' : 'New Customer'">Add/Edit Customer</h1>
+
+    <!-- Main content -->
+    <div id="mainContent">
+        <div class="card shadow">
+            <div class="card-body">
+                <form th:action="@{${customer?.id} ? '/customers/' + ${customer.id} : '/customers'}" 
+                      method="post" 
+                      th:object="${customer}">
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="firstName" class="form-label">First Name</label>
+                            <input type="text" 
+                                   class="form-control" 
+                                   id="firstName" 
+                                   name="firstName" 
+                                   th:value="${customer?.firstName}"
+                                   required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="lastName" class="form-label">Last Name</label>
+                            <input type="text" 
+                                   class="form-control" 
+                                   id="lastName" 
+                                   name="lastName" 
+                                   th:value="${customer?.lastName}"
+                                   required>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" 
+                                   class="form-control" 
+                                   id="email" 
+                                   name="email" 
+                                   th:value="${customer?.email}"
+                                   required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="tel" 
+                                   class="form-control" 
+                                   id="phone" 
+                                   name="phone" 
+                                   th:value="${customer?.phone}">
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <label for="countryId" class="form-label">Country</label>
+                            <select class="form-select" 
+                                    id="countryId" 
+                                    name="countryId" 
+                                    th:value="${customer?.countryId}">
+                                <option value="">Select Country</option>
+                                <!-- Add country options dynamically -->
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="cityId" class="form-label">City</label>
+                            <select class="form-select" 
+                                    id="cityId" 
+                                    name="cityId" 
+                                    th:value="${customer?.cityId}">
+                                <option value="">Select City</option>
+                                <!-- Add city options dynamically -->
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="districtId" class="form-label">District</label>
+                            <select class="form-select" 
+                                    id="districtId" 
+                                    name="districtId" 
+                                    th:value="${customer?.districtId}">
+                                <option value="">Select District</option>
+                                <!-- Add district options dynamically -->
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="address" class="form-label">Address</label>
+                        <textarea class="form-control" 
+                                  id="address" 
+                                  name="address" 
+                                  rows="3" 
+                                  th:text="${customer?.address}"></textarea>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <a href="/customers" class="btn btn-secondary">Cancel</a>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-save me-2"></i>
+                            <span th:text="${customer?.id} ? 'Update Customer' : 'Save Customer'">Save</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page specific scripts -->
+    <th:block id="pageScripts">
+        <script>
+            // Add dynamic loading of cities based on country selection
+            document.getElementById('countryId').addEventListener('change', function() {
+                // TODO: Implement loading cities based on country
+            });
+
+            // Add dynamic loading of districts based on city selection
+            document.getElementById('cityId').addEventListener('change', function() {
+                // TODO: Implement loading districts based on city
+            });
+        </script>
+    </th:block>
+</body>
+</html> 
