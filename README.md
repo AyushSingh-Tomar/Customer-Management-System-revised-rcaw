@@ -136,5 +136,23 @@ src/
 2. Create a new database:
 
 ```sql
+# 1. Install PostgreSQL (skip if already installed)
+# Visit: https://www.postgresql.org/download/
+
+# 2. Open psql (PostgreSQL shell)
+psql -U postgres
+
+# 3. Create a new database
 CREATE DATABASE crm;
+
+# 4. Create a new user with a password
+CREATE USER crm_user WITH PASSWORD 'your_secure_password';
+
+# 5. Grant all privileges on the database to the user
+GRANT ALL PRIVILEGES ON DATABASE crm TO crm_user;
+
+# 6. Allow the user to access the public schema (if needed)
+\c crm
+GRANT ALL ON SCHEMA public TO crm_user;
+```
 
