@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CRM Spring Boot Application
 
-## Getting Started
+A robust Customer Relationship Management (CRM) system built with Spring Boot by **Ayush Singh Tomar**.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 📷 Screenshots
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Dashboard
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+![Dashboard](src/main/resources/images/image.png)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🚀 Features
 
-To learn more about Next.js, take a look at the following resources:
+### 🙋 Customer Management
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Full CRUD operations for customers
+- Stores:
+  - Personal details: First name, Last name
+  - Contact: Email, Phone
+  - Address: Country, City, District
+  - Notes in free-text format
+- Auto-tracking of record creation and modification dates
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 🌍 Location Management
 
-## Deploy on Vercel
+- Hierarchical data management:
+  - Countries
+  - Cities
+  - Districts
+- Easy linkage of customers to locations
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 🛒 Product and Sales Management
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Product catalog management
+- Brands and categories
+- Payment and offer tracking
+
+### 📅 Meeting Status Tracking
+
+- Track and manage customer meetings
+- Monitor all customer interactions
+
+---
+
+## ⚙️ Technical Stack
+
+- **Spring Boot 3.3.1**
+- **PostgreSQL** (Database)
+- **Spring Data JPA** + **Hibernate** (ORM)
+- **Thymeleaf** (UI templating)
+- **Lombok** (reduces boilerplate code)
+- **OpenAPI/Swagger** (API docs)
+- **RESTful API architecture**
+- **JPA Auditing** (for timestamps)
+- **Layered architecture** (Controller, Service, Repository)
+
+---
+
+## 🛠️ Setup Instructions
+
+### 📖 Prerequisites
+
+- Java 17+
+- Maven 3.6+
+- PostgreSQL 12+
+
+### 🗃️ Database Setup
+
+1. Install PostgreSQL (if not already installed)
+2. Create a new database:
+
+```sql
+CREATE DATABASE crm;
+
