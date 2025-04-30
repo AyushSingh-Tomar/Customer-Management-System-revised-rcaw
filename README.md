@@ -58,7 +58,70 @@ A robust Customer Relationship Management (CRM) system built with Spring Boot by
 - **Layered architecture** (Controller, Service, Repository)
 
 ---
+### Directory Schema for Best Practices
 
+````text
+src/
+├── main/
+│   ├── java/
+│   │   └── com/example/yourapp/
+│   │       ├── config/
+│   │       │   ├── SwaggerConfig.java
+│   │       │   ├── SecurityConfig.java
+│   │       │   └── AppConfig.java
+│   │       ├── controller/
+│   │       │   ├── UserController.java
+│   │       │   └── ListingController.java
+│   │       ├── dto/
+│   │       │   ├── request/
+│   │       │   │   ├── UserRequest.java
+│   │       │   │   └── ListingRequest.java
+│   │       │   ├── response/
+│   │       │   │   ├── UserResponse.java
+│   │       │   │   └── ListingResponse.java
+│   │       │   └── Result.java
+│   │       ├── entity/
+│   │       │   ├── BaseEntity.java
+│   │       │   ├── User.java
+│   │       │   └── Listing.java
+│   │       ├── exception/
+│   │       │   ├── GlobalExceptionHandler.java
+│   │       │   ├── CustomException.java
+│   │       │   └── NotFoundException.java
+│   │       ├── mapper/
+│   │       │   ├── UserMapper.java
+│   │       │   └── ListingMapper.java
+│   │       ├── repository/
+│   │       │   ├── UserRepository.java
+│   │       │   └── ListingRepository.java
+│   │       ├── service/
+│   │       │   ├── UserService.java
+│   │       │   └── ListingService.java
+│   │       │   └── impl/
+│   │       │       ├── UserServiceImpl.java
+│   │       │       └── ListingServiceImpl.java
+│   │       ├── util/
+│   │       │   └── UtilityClass.java
+│   │       ├── security/
+│   │       │   ├── AuditConfiguration.java
+│   │       │   ├── AuditorAwareImpl.java
+│   │       │   ├── JwtAuthenticationFilter.java
+│   │       │   ├── JwtTokenProvider.java
+│   │       │   ├── CustomUserDetailsService.java
+│   │       │   └── SecurityConstants.java
+│   │       └── YourAppApplication.java
+│   └── resources/
+│       ├── application.properties
+│       └── application.yml
+└── test/
+    ├── java/com/example/yourapp/
+    │   ├── controller/
+    │   ├── service/
+    │   └── YourAppApplicationTests.java
+    └── resources/
+        └── application.properties
+---
+````
 ## 🛠️ Setup Instructions
 
 ### 📖 Prerequisites
